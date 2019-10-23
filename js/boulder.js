@@ -12,7 +12,7 @@ class Boulder {
     this.sprite.style.position = "absolute";
     this.sprite.style.top = this.y;
     this.sprite.style.left = this.x;
-    this.sprite.style.border = "1px solid red";
+    //this.sprite.style.border = "1px solid red";
     this.hitbox = {
       xMax: this.x + BOULDER_WIDTH,
       xMin: this.x,
