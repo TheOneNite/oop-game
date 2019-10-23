@@ -64,6 +64,10 @@ class Engine {
       this.app.appendChild(ava.sprite);
       setTimeout(ava.tick, 1000);
     });
+    let sfx = document.createElement("audio");
+    sfx.src = "./sounds/avalanche.wav";
+    sfx.play();
+    //this.app.appendChild(sfx);
     setTimeout(this.avalancheCleanup, 1030);
   };
 
