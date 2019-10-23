@@ -64,6 +64,12 @@ inputHandler = event => {
     meters = meters - engine.pawn.moveSpeed;
     heightCounter.innerText = "Height: " + meters + "m";
   }
+  if (event.code === "Space") {
+    engine.pawn.rappelle();
+    levelManager(false);
+    meters = meters - 30;
+    heightCounter.innerText = "Height: " + meters + "m";
+  }
 };
 
 levelManager = ascending => {

@@ -60,6 +60,10 @@ class Player {
       this.collider();
     }
   };
+  rappelle = () => {
+    this.y = this.y + 100;
+    this.collider();
+  };
 
   center = () => {
     this.x = this.x + this.offset;

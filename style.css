@@ -6,7 +6,10 @@
 }
 .scoreWrapper {
   margin-left: 10px;
-  color: #b1c4d8;
+  color: #dde5f4;
   font-size: 20px;
   font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
