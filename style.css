@@ -1,0 +1,12 @@
+.gameWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #1b232b;
+  height: 750px;
+}
+.scoreWrapper {
+  margin-left: 10px;
+  color: #b1c4d8;
+  font-size: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
