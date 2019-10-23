@@ -66,7 +66,9 @@ class Engine {
       this.app.appendChild(ava.sprite);
       setTimeout(ava.tick, 1000);
     });
-    this.sfx.play();
+    let sfx = document.createElement("audio");
+    sfx.src = "./sounds/avalanche.wav";
+    sfx.play();
     //this.app.appendChild(sfx);
     setTimeout(this.avalancheCleanup, 1030);
   };
@@ -241,7 +243,7 @@ class Engine {
     this.avalanches.push(summitAva);
     let delay = (Math.random() * 5 + 5) * 1000;
     setTimeout(summitAva.tick, delay);
-    setTimeout(this.sfx.play(), delay);
+    setTimeout(this.sfx.play, delay);
   };
 
   loseGame = () => {
