@@ -11,6 +11,8 @@ class Engine {
     this.ice = [];
     this.freshIce = [];
     this.centerOffset = 0;
+    this.sfx = document.createElement("audio");
+    this.sfx.src = "./sounds/avalanche.wav";
   }
 
   beginPlay = () => {
@@ -64,9 +66,7 @@ class Engine {
       this.app.appendChild(ava.sprite);
       setTimeout(ava.tick, 1000);
     });
-    let sfx = document.createElement("audio");
-    sfx.src = "./sounds/avalanche.wav";
-    sfx.play();
+    this.sfx.play();
     //this.app.appendChild(sfx);
     setTimeout(this.avalancheCleanup, 1030);
   };
@@ -233,13 +233,15 @@ class Engine {
     let summitAva = new Avalanche(xCoord, yCoord);
     summitAva.tickFn = summitAva.breakAway;
     summitAva.sprite.style.top = yCoord;
-    summitAva.sprite.style.height = "10px";
-    summitAva.height = 10;
+    summitAva.sprite.style.height = "32px";
+    summitAva.height = 32;
     summitAva.collider();
     //summitAva.sprite.style.border = "1px solid red";
     this.app.appendChild(summitAva.sprite);
     this.avalanches.push(summitAva);
-    setTimeout(summitAva.tick, (Math.random() * 5 + 5) * 1000);
+    let delay = (Math.random() * 5 + 5) * 1000;
+    setTimeout(summitAva.tick, delay);
+    setTimeout(this.sfx.play(), delay);
   };
 
   loseGame = () => {
